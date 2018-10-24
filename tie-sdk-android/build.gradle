@@ -1,0 +1,77 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'org.jetbrains.dokka'
+apply plugin: 'maven-publish'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    api 'com.squareup.retrofit2:retrofit:2.4.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    api 'com.squareup.retrofit2:converter-gson:2.3.0'
+    api 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    testImplementation 'com.squareup.okhttp3:mockwebserver:3.11.0'
+    testImplementation 'org.junit.platform:junit-platform-gradle-plugin:1.1.0'
+    testImplementation 'org.junit.vintage:junit-vintage-engine:5.3.1'
+    testImplementation 'org.mockito:mockito-core:2.22.0'
+}
+
+dokka {
+    moduleName = 'tie-sdk-android'
+    includeNonPublic = false
+    reportUndocumented = false
+    skipEmptyPackages = true
+    noStdlibLink = true
+}
+
+task dokkaJavadoc(type: org.jetbrains.dokka.gradle.DokkaTask) {
+    outputFormat = "javadoc"
+    outputDirectory = "$buildDir/dokkaJavadoc"
+}
+
+ext {
+    bintrayRepo = 'tie-sdk-android'
+    bintrayName = 'tie-sdk-android'
+
+    organization = 'artificialsolutions'
+
+    publishedGroupId = 'com.artificialsolutions.tie-sdk-android'
+    libraryName = 'Tie SDK Android'
+    artifact = 'tie-sdk-android'
+
+    libraryDescription = 'Android SDK for Teneo Interaction Engine'
+
+    siteUrl = 'https://www.artificial-solutions.com/teneo/teneo-interaction-engine'
+    gitUrl = 'https://github.com/artificialsolutions/tie-api-client-android.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'artificialsolutions'
+    developerName = 'Artificial Solutions'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+apply from: 'bintray.gradle'

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">TieSDKTestApp</string>
+    <string name="input_hint">user input</string>
+    <string name="parameter_hint">parameter</string>
+    <string name="value_hint">value</string>
+    <string name="header_output">Ouput</string>
+    <string name="header_input">Input</string>
+    <string name="header_raw">Raw</string>
+    <string name="button_send">Send</string>
+    <string name="button_close">Close</string>
+    <string name="close_session_feedback">Close</string>
+</resources>
