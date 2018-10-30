@@ -21,7 +21,8 @@ TieApiService.getSharedInstance().sendInput(text, parameters)
 ```
 
 ## Installation
-You can add the library to your project through jCenter. Make sure to reference the jcenter repository, and then add the dependency com.artificalsolutions.tie-sdk-android:tie-sdk-android:1.0.0.
+You can add the library to your project through jCenter. Make sure to reference the jcenter repository, and then add the dependency
+com.artificialsolutions.tie-sdk-android:tie-sdk-android:1.0.0
 Using the library also requires rxjava2.
 
 build.gradle example:
@@ -33,7 +34,7 @@ buildscript {
 }
 
 dependencies {
-    implementation 'com.artificalsolutions.tie-android-sdk:tie-android-sdk:1.0.0'
+    implementation 'com.artificialsolutions.tie-sdk-android:tie-sdk-android:1.0.0'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
 }
 ```
