@@ -1,4 +1,4 @@
-package com.artificalsolutions.tiesdktestapp;
+package com.artificialsolutions.tiesdktestapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,9 +7,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.artificalsolutions.tiesdk.TieApiService;
-import com.artificalsolutions.tiesdk.model.TieCloseSessionResponse;
-import com.artificalsolutions.tiesdk.model.TieResponse;
+import com.artificialsolutions.tiesdk.TieApiService;
+import com.artificialsolutions.tiesdk.model.TieCloseSessionResponse;
+import com.artificialsolutions.tiesdk.model.TieResponse;
 import com.google.gson.Gson;
 
 import java.util.HashMap;

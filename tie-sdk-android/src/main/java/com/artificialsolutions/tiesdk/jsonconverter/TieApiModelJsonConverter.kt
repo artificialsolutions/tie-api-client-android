@@ -1,7 +1,7 @@
-package com.artificalsolutions.tiesdk.jsonconverter
+package com.artificialsolutions.tiesdk.jsonconverter
 
-import com.artificalsolutions.tiesdk.model.TieCloseSessionResponse
-import com.artificalsolutions.tiesdk.model.TieResponse
+import com.artificialsolutions.tiesdk.model.TieCloseSessionResponse
+import com.artificialsolutions.tiesdk.model.TieResponse
 import com.google.gson.GsonBuilder;
 import retrofit2.converter.gson.GsonConverterFactory
 

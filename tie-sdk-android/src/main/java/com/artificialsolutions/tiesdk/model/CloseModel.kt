@@ -1,4 +1,4 @@
-package com.artificalsolutions.tiesdk.model
+package com.artificialsolutions.tiesdk.model
 
 /**
  * Response to a successful close session call.

@@ -1,4 +1,4 @@
-package com.artificalsolutions.tiesdk.model
+package com.artificialsolutions.tiesdk.model
 
 /**
  * Successful response from the engine.

@@ -1,10 +1,10 @@
-package com.artificalsolutions.tiesdk
+package com.artificialsolutions.tiesdk
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.artificalsolutions.tiesdk.exception.NotInitializedException
-import com.artificalsolutions.tiesdk.model.TieCloseSessionResponse
-import com.artificalsolutions.tiesdk.model.TieResponse
+import com.artificialsolutions.tiesdk.exception.NotInitializedException
+import com.artificialsolutions.tiesdk.model.TieCloseSessionResponse
+import com.artificialsolutions.tiesdk.model.TieResponse
 import io.reactivex.Single
 import io.reactivex.functions.Consumer
 

@@ -1,22 +1,28 @@
-package com.artificalsolutions.tiesdk.jsonconverter
+package com.artificialsolutions.tiesdk.jsonconverter
 
-import com.artificalsolutions.tiesdk.exception.TieApiException
-import com.artificalsolutions.tiesdk.model.TieCloseSessionResponse
-import com.artificalsolutions.tiesdk.model.TieErrorResponse
-import com.google.gson.*
+import com.artificialsolutions.tiesdk.exception.TieApiException
+import com.artificialsolutions.tiesdk.model.TieErrorResponse
+import com.artificialsolutions.tiesdk.model.TieResponse
+import com.google.gson.JsonElement
+import com.google.gson.JsonObject
+import com.google.gson.Gson
+import com.google.gson.JsonParseException
+import com.google.gson.JsonDeserializationContext
+import com.google.gson.JsonDeserializer
 import java.lang.reflect.Type
 
-internal class CloseModelDeserializer: JsonDeserializer<TieCloseSessionResponse> {
-    val closeModelRequiredFields: Array<String> = arrayOf("response")
+
+internal class OutputModelDeserializer: JsonDeserializer<TieResponse> {
+    val outputModelRequiredFields: Array<String> = arrayOf("input", "output", "status", "sessionId")
     val errorModelRequiredFields: Array<String> = arrayOf("message")
 
     @Throws(JsonParseException::class, TieApiException::class)
-    override fun deserialize(json: JsonElement, typeOfT: Type, context: JsonDeserializationContext): TieCloseSessionResponse {
+    override fun deserialize(json: JsonElement, typeOfT: Type, context: JsonDeserializationContext): TieResponse {
         val gson = Gson()
 
-        if (isValidOutputModel(json.asJsonObject, closeModelRequiredFields)) {
+        if (isValidOutputModel(json.asJsonObject, outputModelRequiredFields)) {
             try {
-                val output = gson.fromJson<TieCloseSessionResponse>(json, TieCloseSessionResponse::class.java)
+                val output = gson.fromJson<TieResponse>(json, TieResponse::class.java)
 
                 return output
             } catch (ex: JsonParseException) {}

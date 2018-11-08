@@ -1,6 +1,6 @@
-package com.artificalsolutions.tiesdk.exception
+package com.artificialsolutions.tiesdk.exception
 
-import com.artificalsolutions.tiesdk.model.TieErrorResponse
+import com.artificialsolutions.tiesdk.model.TieErrorResponse
 
 /**
  * Exception thrown when the engine responds with an error message.

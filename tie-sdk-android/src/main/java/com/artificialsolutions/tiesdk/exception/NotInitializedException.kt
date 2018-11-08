@@ -1,4 +1,4 @@
-package com.artificalsolutions.tiesdk.exception
+package com.artificialsolutions.tiesdk.exception
 
 import java.lang.Exception
 

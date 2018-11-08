@@ -1,4 +1,4 @@
-package com.artificalsolutions.tiesdk
+package com.artificialsolutions.tiesdk
 
 internal class ApiConstants {
     companion object {

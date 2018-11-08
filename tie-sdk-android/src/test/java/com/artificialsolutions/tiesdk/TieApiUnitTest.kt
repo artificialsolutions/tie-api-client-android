@@ -1,11 +1,11 @@
-package com.artificalsolutions.tiesdk
+package com.artificialsolutions.tiesdk
 
 import android.content.Context
 import org.junit.Before
 import org.junit.Test
 import android.content.SharedPreferences
-import com.artificalsolutions.tiesdk.exception.TieApiException
-import com.artificalsolutions.tiesdk.model.*
+import com.artificialsolutions.tiesdk.exception.TieApiException
+import com.artificialsolutions.tiesdk.model.*
 import com.google.gson.Gson
 import com.google.gson.JsonParseException
 import org.mockito.ArgumentMatchers.anyInt
@@ -168,7 +168,7 @@ class TieApiUnitTest {
         val sessionId = "testSessionId"
         val testOutput: TieResponse = TieResponse(
                 status = "1",
-                input =  TieInput(text = "this is test input", parameters = HashMap<String, String>()),
+                input = TieInput(text = "this is test input", parameters = HashMap<String, String>()),
                 output = TieOutput(text = "this is test output", emotion = "", link = "", parameters = HashMap<String, String>()),
                 sessionId = sessionId)
 
@@ -196,7 +196,7 @@ class TieApiUnitTest {
 
         val testResponseBody: TieResponse = TieResponse(
                 status = "1",
-                input =  TieInput(text = "this is test input", parameters = HashMap<String, String>()),
+                input = TieInput(text = "this is test input", parameters = HashMap<String, String>()),
                 output = TieOutput(text = "this is test output", emotion = "", link = "", parameters = HashMap<String, String>()),
                 sessionId = sessionId)
 
@@ -231,7 +231,7 @@ class TieApiUnitTest {
 
         val testResponseBody: TieResponse = TieResponse(
                 status = "1",
-                input =  TieInput(text = "this is test input", parameters = HashMap<String, String>()),
+                input = TieInput(text = "this is test input", parameters = HashMap<String, String>()),
                 output = TieOutput(text = "this is test output", emotion = "", link = "", parameters = HashMap<String, String>()),
                 sessionId = sessionId)
 

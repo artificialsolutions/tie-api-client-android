@@ -1,8 +1,8 @@
-package com.artificalsolutions.tiesdk
+package com.artificialsolutions.tiesdk
 
-import com.artificalsolutions.tiesdk.jsonconverter.TieApiModelJsonConverter
-import com.artificalsolutions.tiesdk.model.TieCloseSessionResponse
-import com.artificalsolutions.tiesdk.model.TieResponse
+import com.artificialsolutions.tiesdk.jsonconverter.TieApiModelJsonConverter
+import com.artificialsolutions.tiesdk.model.TieCloseSessionResponse
+import com.artificialsolutions.tiesdk.model.TieResponse
 import io.reactivex.Observable
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.Retrofit
