@@ -12,7 +12,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
-        versionName "1.0.0"
+        versionName "1.0.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -64,7 +64,7 @@ ext {
     siteUrl = 'https://www.artificial-solutions.com/teneo/teneo-interaction-engine'
     gitUrl = 'https://github.com/artificialsolutions/tie-api-client-android.git'
 
-    libraryVersion = '1.0.0'
+    libraryVersion = '1.0.1'
 
     developerId = 'artificialsolutions'
     developerName = 'Artificial Solutions'
