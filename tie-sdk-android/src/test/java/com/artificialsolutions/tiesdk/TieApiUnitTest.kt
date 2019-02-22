@@ -72,7 +72,7 @@ class TieApiUnitTest {
         service!!.sendInput("my name is test").subscribe()
 
         val request1 = server!!.takeRequest()
-        val expectedBody = "userinput=my%20name%20is%20test&viewname=tieapi&viewtype=tieapi"
+        val expectedBody = "userinput=my%20name%20is%20test&viewtype=tieapi"
 
         Assert.assertEquals(expectedBody, request1.body.readUtf8().trim())
     }
@@ -106,7 +106,7 @@ class TieApiUnitTest {
             Assert.assertEquals(parameters, result.output.parameters)
         }
 
-        val expectedBody = "userinput=my%20name%20is%20test1&param1=val1&param2=val2&viewname=tieapi&viewtype=tieapi"
+        val expectedBody = "userinput=my%20name%20is%20test1&param1=val1&param2=val2&viewtype=tieapi"
         val request1 = server!!.takeRequest()
         val body = request1.body.readUtf8().trim()
         Assert.assertEquals(expectedBody, body)

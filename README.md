@@ -22,7 +22,7 @@ TieApiService.getSharedInstance().sendInput(text, parameters)
 
 ## Installation
 You can add the library to your project through jCenter. Make sure to reference the jcenter repository, and then add the dependency
-com.artificialsolutions.tie-sdk-android:tie-sdk-android:1.0.1
+com.artificialsolutions.tie-sdk-android:tie-sdk-android:1.0.2
 Using the library also requires rxjava2.
 
 build.gradle example:
@@ -34,7 +34,7 @@ buildscript {
 }
 
 dependencies {
-    implementation 'com.artificialsolutions.tie-sdk-android:tie-sdk-android:1.0.1'
+    implementation 'com.artificialsolutions.tie-sdk-android:tie-sdk-android:1.0.2'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
 }
 ```
@@ -60,7 +60,7 @@ TieApiService.getSharedInstance().sendInput(userInput, parameters)
 The input string that is sent to the engine.
 
 *parameters* : HashMap<String, String>
-Any engine instance specific parameters. The following keywords are reserved: *viewtype*, *viewname* and *userinput*.
+Any engine instance specific parameters. The following keywords are reserved: *viewtype* and *userinput*.
 
 **Response:**
 On success a **TieResponse** object is returned.

@@ -16,7 +16,6 @@ internal interface TieApi {
                   @Header("cookie") sessionId: String?,
                   @Field("userinput") userInput: String,
                   @FieldMap() parameters: Map<String, String>,
-                  @Field("viewname") viewName: String,
                   @Field("viewtype") viewType: String):
             Observable<TieResponse>
 
