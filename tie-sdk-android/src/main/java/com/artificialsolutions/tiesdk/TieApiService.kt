@@ -63,7 +63,7 @@ public class TieApiService {
      * Sends input to the engine. You need to call setup once before calling this.
      *
      * @param userInput the text that is sent to the engine
-     * @param parameters key-value pairs of implementation specific string parameters. Reserved keys are text, viewname, and viewtype.
+     * @param parameters key-value pairs of implementation specific string parameters. Reserved keys are text and viewtype.
      */
     public fun sendInput(userInput: String, parameters: HashMap<String, String>? = null): Single<TieResponse> {
         verifySetup()
@@ -73,7 +73,8 @@ public class TieApiService {
             sessionCookie = "${ApiConstants.SESSION_COOKIE_PREFIX}$sessionId"
         }
 
-        return service.sendInput(url = endpoint!!, userInput = userInput, parameters = parameters ?: HashMap(), viewName = ApiConstants.API_VIEW_NAME, viewType = ApiConstants.API_VIEW_TYPE, sessionId = sessionCookie)
+
+        return service.sendInput(url = endpoint!!, userInput = userInput, parameters = parameters ?: HashMap(),  viewType = ApiConstants.API_VIEW_TYPE, sessionId = sessionCookie)
                 .singleOrError()
                 .doOnSuccess(Consumer { result ->  persistSession(result.sessionId!!)  })
     }
