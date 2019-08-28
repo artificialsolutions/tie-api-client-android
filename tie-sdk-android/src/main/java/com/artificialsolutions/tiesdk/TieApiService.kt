@@ -73,6 +73,28 @@ public class TieApiService {
             sessionCookie = "${ApiConstants.SESSION_COOKIE_PREFIX}$sessionId"
         }
 
+        return service.sendInput(url = endpoint!!, userInput = userInput, parameters = parameters ?: HashMap(),  viewType = ApiConstants.API_VIEW_TYPE, sessionId = sessionCookie)
+                .singleOrError()
+                .doOnSuccess(Consumer { result ->  persistSession(result.sessionId!!)  })
+    }
+
+    /**
+     * Sends input to the engine. You need to call setup once before calling this.
+     *
+     * @param userInput the text that is sent to the engine
+     * @param parameters key-value pairs of implementation specific string parameters. Reserved keys are text and viewtype.
+     * @param newSessionID call this method using a sessionID different than the one used by default.
+     */
+    public fun sendInput(userInput: String, parameters: HashMap<String, String>? = null, newSessionID: String): Single<TieResponse> {
+
+        verifySetup()
+
+        var sessionCookie: String? = null
+        if (!newSessionID.isNullOrBlank()) {
+            sessionCookie = "${ApiConstants.SESSION_COOKIE_PREFIX}$newSessionID"
+
+            persistSession(sessionCookie)
+        }
 
         return service.sendInput(url = endpoint!!, userInput = userInput, parameters = parameters ?: HashMap(),  viewType = ApiConstants.API_VIEW_TYPE, sessionId = sessionCookie)
                 .singleOrError()
