@@ -85,7 +85,7 @@ public class TieApiService {
      * @param parameters key-value pairs of implementation specific string parameters. Reserved keys are text and viewtype.
      * @param newSessionID call this method using a sessionID different than the one used by default.
      */
-    public fun sendInput(userInput: String, parameters: HashMap<String, String>? = null, newSessionID: String): Single<TieResponse> {
+    public fun sendInput(userInput: String, parameters: HashMap<String, String>? = null, newSessionID: String?): Single<TieResponse> {
 
         verifySetup()
 
